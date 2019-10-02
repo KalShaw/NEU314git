@@ -22,5 +22,24 @@ function RGB(fileName)
     blue = image[:,:,3];
     return red, green, blue;
 end
+println("Reset with git reset -- Mixed");
 
 (r, g, b) = RGB("el-capitan.png");
+
+
+image2 = ones(360, 640, 3);
+image2[:,:,1] = g;
+image2[:,:,2] = b;
+image2[:,:,3] = r;
+
+subplot(1,2,1)
+imshow(pic)
+title("Original Image")
+axis("off")
+
+subplot(1,2,2)
+imshow(image2)
+title("Altered Image")
+axis("off")
+
+ 
