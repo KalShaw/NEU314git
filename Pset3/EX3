@@ -42,4 +42,24 @@ imshow(image2)
 title("Altered Image")
 axis("off")
 
- 
+
+
+
+function shiftIM(fileName, N)
+    image = imread(fileName);
+    shiftedIM = circshift(image, (-N,0))
+    return shiftedIM
+end
+
+shiftedIM = shiftIM("el-capitan.png", 180)
+
+figure()
+subplot(1,2,1)
+imshow(pic)
+title("Original Image")
+axis("off")
+
+subplot(1,2,2)
+imshow(shiftedIM)
+title("Shifted Image")
+axis("off")
