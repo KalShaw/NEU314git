@@ -13,7 +13,7 @@ pic = imread("el-capitan.png");
 imshow(pic);
 size(pic)
 
-#BP b)
+##BP b)
 function RGB(fileName)
     image = imread(fileName);
     imshow(image);
@@ -22,11 +22,13 @@ function RGB(fileName)
     blue = image[:,:,3];
     return red, green, blue;
 end
+
 println("Reset with git reset -- Mixed");
 
 (r, g, b) = RGB("el-capitan.png");
 
 
+##BP e)
 image2 = ones(360, 640, 3);
 image2[:,:,1] = g;
 image2[:,:,2] = b;
@@ -43,12 +45,12 @@ title("Altered Image")
 axis("off")
 
 
-
+## Part B
 
 function shiftIM(fileName, N)
     image = imread(fileName);
-    shiftedIM = circshift(image, (-N,0))
-    return shiftedIM
+    image[:,:,1] = circshift(image[:,:,1], (-N,0))
+    return image
 end
 
 shiftedIM = shiftIM("el-capitan.png", 180)
