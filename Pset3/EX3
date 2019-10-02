@@ -9,5 +9,18 @@ Args:
 Returns:
    out (int): Description of returned value
 """
-pic = imread("el-capitan.png")
-imshow(convert(Array{Float32,3}, pic))
+pic = imread("el-capitan.png");
+imshow(pic);
+size(pic)
+
+#BP b)
+function RGB(fileName)
+    image = imread(fileName);
+    imshow(image);
+    red = image[:,:,1];
+    green = image[:,:,2];
+    blue = image[:,:,3];
+    return red, green, blue;
+end
+
+(r, g, b) = RGB("el-capitan.png");
